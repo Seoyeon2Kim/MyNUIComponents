@@ -63,6 +63,7 @@ TizenFX에 있는 Tizen.NUI.Samples의 샘플을 사용하여 확인했습니다
 
 ### `AccessibilityHidden` 적용을 위해 고려할 사항
 
+- DefaultGridItem의 경우, 보이는 부분만 tree에 나오게
 - 'DefaultTitleItem'과 'Grid Sample Count' TextLabel 사이의 Control의 정체 및 사용 여부 확인 필요
 - 그 외엔 마지막에 달려있는 Scrollbar와 Control, ImageView의 역할 확인
 

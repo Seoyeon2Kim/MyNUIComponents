@@ -62,12 +62,15 @@ TizenFX에 있는 Tizen.NUI.Samples의 샘플을 사용하여 확인했습니다
      - string Text 혹은 TextLabel Label -> 내부적으로 TextLabel 타입인, Label의 text에 string을 set함
      - string SubText 혹은 TextLabel SubLabel
 
-- 우선 Label이 Name / SubLabel이 Description으로 하는게 어떨지!
+- Label과 SubLabel이 Name
 
 <br>
 
 ### `AccessibilityHidden` 적용을 위해 고려할 사항
 
+- 현재 : `Seperator` property와 `Label`과 `SubLabel`에 적용되어 있음
+
+- DefaultLinearItem 경우, 보이는 부분만 tree에 나오게
 - 'DefaultTitleItem'과 'Linear Sample Count' TextLabel 사이의 Control의 정체 및 사용 여부 확인 필요
 - 그 외엔 마지막에 달려있는 Scrollbar와 Control, ImageView의 역할 확인
 

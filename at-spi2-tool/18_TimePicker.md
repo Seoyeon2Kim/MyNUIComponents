@@ -64,5 +64,6 @@ TizenFX에 있는 Tizen.NUI.Samples의 샘플을 사용하여 확인했습니다
 
 ### `AccessibilityHidden` 적용을 위해 고려할 사항
 
+- TextLabel의 경우, 보이는 부분만 tree에 나오게
 - 중간 중간에 있는 Control들... 
 

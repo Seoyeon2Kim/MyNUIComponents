@@ -42,7 +42,7 @@ TizenFX에 있는 Tizen.NUI.Samples의 샘플을 사용하여 확인했습니다
  : 비쥬얼 요소로 텍스트가 있는 Component
 
 1. string Text
-     - 이미 Name이 적용되어있으나, 업데이트함
+     - 이미 Name이 적용되어있음
 
 <br>
 
