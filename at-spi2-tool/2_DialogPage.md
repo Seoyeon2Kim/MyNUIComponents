@@ -64,6 +64,18 @@ TizenFX에 있는 Tizen.NUI.Samples의 샘플을 사용하여 확인했습니다
 
 ### `AccessibilityHidden` 적용을 위해 고려할 사항
 
-- 'DialogPage'와 'Dialog'사이의 VisualView의 정체 및 사용 여부 확인 필요
-- Highlight box인 'ImageView' 다음에 있는 Control의 정체 확인 필요
+- 'DialogPage'와 'Dialog'사이의 VisualView의 정체
+  
+  -> `Scrim` 이었다. 여기서 잠깐. Scrim이란 : "Scrim is the dimmed screen region behind dialog." <br>
+    "A scrim is a temporary treatment that can be applied to Material surfaces for the purpose of making content on the surface less prominent."
+  ```C#
+          private View CreateDefaultScrim()
+        {
+            var scrim = new VisualView(scrimStyle);
+            scrim.Size = NUIApplication.GetDefaultWindow().Size;
+            return scrim;
+        }
+  ```
+  Q. 이 scrim은 tree에서 안보이게 해도 될듯?
 
+  A. 사용자가 추가, 수정할 수 있는 property의 View이기 때문에 at-spi2 tree에 보여야 합니다!

@@ -82,7 +82,26 @@ TizenFX에 있는 Tizen.NUI.Samples의 샘플을 사용하여 확인했습니다
 
 ### `AccessibilityHidden` 적용을 위해 고려할 사항
 
-- Button 클릭 전, 'Click to show AlertDialog` Button 다음에 있는 Control의 정체
 - 'DialogPage'와 'AlertDialog'사이의 VisualView의 정체 및 사용 여부 확인 필요
-- Yes / No Button들 다음에 있는 Control 2개의 정체!
+    -> `Scrim` 이었다. ([DialogPage](./2_DialogPage.md) 와 동일)
+- Yes / No Button들 다음에 있는 Control 정체!
 
+    -> 역시 [AppBar](./1_AppBar.md)처럼 `ActionContent`의 property에서의 View
+    ```C#
+            private View CreateDefaultActionContent()
+        {
+            return new View()
+            {
+                Layout = new LinearLayout()
+                {
+                    LinearOrientation = LinearLayout.Orientation.Horizontal,
+                    LinearAlignment = LinearLayout.Alignment.Center,
+                    CellPadding = new Size2D(80, 0),
+                },
+            };
+        }
+    ```
+    Q. 이 default action view는 tree에서 안보이게 해도 될듯? (AppBar와 동일하게 하기)
+
+    A. 사용자가 추가, 수정할 수 있는 property의 View이기 때문에 at-spi2 tree에 보여야 합니다!
+    

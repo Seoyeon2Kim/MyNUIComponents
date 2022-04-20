@@ -62,5 +62,28 @@ TizenFX에 있는 Tizen.NUI.Samples의 샘플을 사용하여 확인했습니다
 ### `AccessibilityHidden` 적용을 위해 고려할 사항
 
 - Navigator가 두개인 이유와 그 사이 Control의 정체
+
+  -> 두 개인 이유 : (추측) app에서 생성하는 Navigator와 Default Navigator가 두 번 생성되기 때문에
+  ```C#
+        public static Navigator GetDefaultNavigator(Window window)
+        {
+            var defaultNavigator = new Navigator();
+            defaultNavigator.WidthResizePolicy = ResizePolicyType.FillToParent;
+            defaultNavigator.HeightResizePolicy = ResizePolicyType.FillToParent;
+            window.Add(defaultNavigator);
+            windowNavigator.Add(window, defaultNavigator);
+            navigatorWindow.Add(defaultNavigator, window);
+
+            return defaultNavigator;
+        }
+  ```
+  Q. 두 개 모두 유지?
+
+  A. DefaultNavigator가 보이는 이유는, Sample에서 각 아이템을 보이기 위한 main에서 사용되기 때문입니다.
+
+    그렇기 때문에 Default Navigator 역시 tree에서 보여야 합니다.
+
+
 - 'FirstPage' TextLabel과 'First Page' Button 사이의 Control의 정체 및 사용 여부 확인 필요
 
+  -> `AppBar`와 동일하게 유지

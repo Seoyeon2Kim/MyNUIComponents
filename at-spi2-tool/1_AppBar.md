@@ -41,5 +41,76 @@ TizenFX에 있는 Tizen.NUI.Samples의 샘플을 사용하여 확인했습니다
 
 ### `AccessibilityHidden` 적용을 위해 고려할 사항
 
-- 'First Page' TextLabel과 'Page 2' Button 사이의 Control의 정체 및 사용 여부 확인 필요
+- 'First Page' TextLabel과 'Page 2' Button 사이의 Control의 정체
+ 
+   -> `Actions` property에 set한 `View`
+
+ 우선 샘플에서 아래처럼 사용
+
+ ``` C#
+             firstActionButton = new Button()
+            {
+                Text = "Page 2",
+            };
+
+            firstAppBar = new AppBar()
+            {
+                AutoNavigationContent = false,
+                Title = "First Page",
+                Actions = new View[] { firstActionButton },
+            };
+ ```
+
+그리고 `Actions` property에선
+
+``` C#
+        private IEnumerable<View> actionContentViews = null;
+
+        public IEnumerable<View> Actions
+        {
+            get
+            {
+                return actionContentViews;
+            }
+            set
+            {
+                //
+                actionContentViews = value;
+                //
+                foreach (var action in actionContentViews)
+                {
+                    if ((action is Button) && (actionButtonStyle != null))
+                    {
+                        action.ApplyStyle(actionButtonStyle);
+                    }
+                    else if (actionViewStyle != null)
+                    {
+                        action.ApplyStyle(actionViewStyle);
+                    }
+
+                    ActionContent.Add(action);
+                }
+            }
+        }
+
+```
+
+Q. 이 actionContentViews, 즉, for each를 통해 나온 action 혹은 actionContent 를 tree에서 안보이게 해야할까?
+```C#
+        private View CreateDefaultActionContent()
+        {
+            return new View()
+            {
+                Layout = new LinearLayout()
+                {
+                    LinearOrientation = LinearLayout.Orientation.Horizontal,
+                    LinearAlignment = LinearLayout.Alignment.End,
+                },
+                WidthSpecification = LayoutParamPolicies.MatchParent,
+                HeightSpecification = LayoutParamPolicies.MatchParent,
+            };
+        }
+```
+
+A. 사용자가 추가, 수정할 수 있는 property의 View이기 때문에 at-spi2 tree에 보여야 합니다!
 

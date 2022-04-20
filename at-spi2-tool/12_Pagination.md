@@ -39,3 +39,9 @@ TizenFX에 있는 Tizen.NUI.Samples의 샘플을 사용하여 확인했습니다
 
 - Container 역할을 하는 VisualView가 tree에 보여야할까?
 
+  -> 현재는 보여야 함!
+
+  -> Pagination 내의 page를 나타내는 점들(Indicator)이 visual로 이뤄져있기에 tree에 보이지 않음 + Highlight가 가지 않음
+
+  : ImageVisual -> ImageView로 변경하는것 고려!
+

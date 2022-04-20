@@ -66,5 +66,11 @@ TizenFX에 있는 Tizen.NUI.Samples의 샘플을 사용하여 확인했습니다
 ### `AccessibilityHidden` 적용을 위해 고려할 사항
 
 - 'Menu'와 'ScrollableBase' 사이의 VisualView의 역할
-- 마지막의 Scrollbar와 Control, ImageView의 역할 및 트리에 보여야 하는지 여부
+
+  -> 역시 Scrim임 [DialogPage](./2_DialogPage.md) 와 동일하게 유지.
+  
+- 마지막의 Scrollbar와 Control, ImageView의 트리에 보여야 하는지 여부
+
+  -> Scrollbar의 Control은 Hidden으로!
+
 
