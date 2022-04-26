@@ -20,3 +20,10 @@ seoyeon@seoyeon-linux:~/mywork/develmaster/TizenFX/test/Tizen.NUI.StyleGuide (De
 Horizontal / Vertical 두 개의 리스트처럼 보이는 선택 부분에 포커스가 가야만 할 것 같습니다.
 
 (이후, 한단계 depth를 더 들어간 후에는 Scroll 동작을 활용한 테스트)
+
+-> 두 depth 모두 Key가 item별로 갈 수 있도록 수정
+
+  ```C#
+   item.Focusable = true;
+   item.FocusableInTouch = true;
+  ```

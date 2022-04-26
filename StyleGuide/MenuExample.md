@@ -19,10 +19,9 @@ seoyeon@seoyeon-linux:~/mywork/develmaster/TizenFX/test/Tizen.NUI.StyleGuide (De
 ![MenuDisappear](./MenuAppearanceIssue.png)
 
 
-(이어서 보기)
+**해결 방안 :**
 
-MenuItem들을 보여주는 것은,
+`MenuItem`들이 앱의 Dispose() 시에 각 item들의 Dispose()를 부르고, null로 초기화시키도록 수정
 
-Menu class의 Anchor property인가 혹은
+(다른 NUI sample app들도 동일하게  하고 있음)
 
-AppBar class의 Action property인가
