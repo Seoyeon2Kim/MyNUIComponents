@@ -16,6 +16,6 @@ seoyeon@seoyeon-linux:~/mywork/develmaster/TizenFX/test/Tizen.NUI.StyleGuide (De
 아래 그림과 같이 포커스를 나타내는 highlight box가 팝업이 뜬 후에도 뒤에 유지되고 있습니다.
 
 
-![FocusBehind](./DialogFocusIssue.png)
+![FocusBehind](./images/DialogFocusIssue.png)
 
 

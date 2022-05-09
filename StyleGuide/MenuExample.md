@@ -16,7 +16,7 @@ seoyeon@seoyeon-linux:~/mywork/develmaster/TizenFX/test/Tizen.NUI.StyleGuide (De
 왼쪽 상단에 있는 뒤로 가기 버튼을 눌러 main 메뉴로 오면, 아래 그림과 같이 MenuItem들이 사라지지 않습니다.
 
 
-![MenuDisappear](./MenuAppearanceIssue.png)
+![MenuDisappear](./images/MenuAppearanceIssue.png)
 
 
 **해결 방안 :**
